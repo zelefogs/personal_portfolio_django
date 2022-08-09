@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Blog(models.Model):
-	title = models.TextField(max_length=150, name='title')
+	title = models.CharField(max_length=200, name='title')
 	date = models.DateField()
-	description = models.CharField(max_length=250)
+	description = models.TextField()
+
+	def __str__(self):
+		return self.title
